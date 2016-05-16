@@ -50,7 +50,8 @@ $ bin/rails generate model Article
 
 #After editing the db/migrate/(some_time_stamp)_create_articles.rb to add your model fields
 $ bin/rake db:migrate
-  
+
+
 $ bin/rails generate controller articles
   The output shows that the generator created several files/folders for you:
   -app/controllers/articles_controller.rb : The controller file itself
@@ -60,5 +61,11 @@ $ bin/rails generate controller articles
   -test/helpers/articles_helper_test.rb : The helper’s unit test file
   -app/assets/javascripts/articles.js.coffee : A CoffeeScript file for this controller
   -app/assets/stylesheets/articles.css.scss : An SCSS stylesheet for this controller
+
+# SCAFFOLD for MVC
+$ bin/rails generate scaffold_controller Author username:string email:string password:password password_confirmation:password
+  Rails has two scaffold generators: scaffold and scaffold_controller. The scaffold generator generates the model, controller and views.
+  The scaffold_controller will generate the controller and views. 
+  We are generating a scaffold_controller instead of scaffold because Sorcery has already defined for us an Author model.
 
 $ bin/rake routes #shows all the IP routes
